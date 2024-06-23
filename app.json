@@ -3,6 +3,7 @@
     "name": "Audire",
     "slug": "Audire",
     "version": "1.0.0",
+    "scheme": "myapp",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
@@ -12,16 +13,39 @@
       "backgroundColor": "#ffffff"
     },
     "ios": {
-      "supportsTablet": true
-    },
-    "android": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.audire.app",
+      "infoPlist": {
+        "UiBackgroundModes": [
+          "audio"
+        ]
+      },
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       }
     },
+    "android": {
+      "permissions": [
+        "WRITE_EXTERNAL_STORAGE",
+        "READ_EXTERNAL_STORAGE"
+      ],
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#ffffff"
+      },
+      "package": "com.audire.app"
+    },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "plugins": [
+      "expo-router"
+    ],
+    "extra": {
+      "router": {
+        "origin": false
+      }
     }
   }
 }
